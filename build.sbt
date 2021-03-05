@@ -10,6 +10,8 @@ lazy val root = (project in file("."))
     name := "netty-scala",
     libraryDependencies += scalaTest % Test
   )
+libraryDependencies += "io.netty" % "netty-all" % "4.1.59.Final"
+
 
 // Uncomment the following for publishing to Sonatype.
 // See https://www.scala-sbt.org/1.x/docs/Using-Sonatype.html for more detail.
