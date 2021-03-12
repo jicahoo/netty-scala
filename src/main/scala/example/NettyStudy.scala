@@ -1,6 +1,7 @@
 package example
 
 import java.lang
+import java.util.concurrent.TimeUnit
 
 import io.netty.bootstrap.ServerBootstrap
 import io.netty.channel.{ChannelFuture, ChannelInitializer, ChannelOption, EventLoopGroup}
@@ -31,6 +32,7 @@ object NettyStudy {
         )
         .option(ChannelOption.SO_BACKLOG, new Integer(128))
         .childOption(ChannelOption.SO_KEEPALIVE,new java.lang.Boolean(true))
+
       val f = b.bind(port).sync()
       f.channel().closeFuture().sync()
     } finally {
